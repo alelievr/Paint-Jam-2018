@@ -43,15 +43,18 @@ public class GameManager : MonoBehaviour
 		gameState = GameState.Play;
 	}
 
-	public void Win ()
-	{
+	public void Restart() {
+		SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+	}
+
+	public void Win () {
 		gameState = GameState.End;
-		LoadNext();
+		Debug.Log("Level" + (level + 1).ToString());
+		StartCoroutine(LoadNext());
 	}
 	
-	IEnumerator LoadNext()
-	{
-		yield return new WaitForSeconds(5f);
+	IEnumerator LoadNext() {
+		yield return new WaitForSeconds(2f);
 		SceneManager.LoadScene("Level" + (level + 1).ToString());
 	}
 }
