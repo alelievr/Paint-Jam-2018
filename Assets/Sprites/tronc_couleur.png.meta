@@ -1,9 +1,10 @@
 fileFormatVersion: 2
 guid: c7fa43488294e49a695295afcd13ab5c
-timeCreated: 1519490893
+timeCreated: 1519492184
 licenseType: Free
 TextureImporter:
-  fileIDToRecycleName: {}
+  fileIDToRecycleName:
+    21300000: tronc_couleur_0
   externalObjects: {}
   serializedVersion: 4
   mipmaps:
@@ -40,7 +41,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -66,10 +67,101 @@ TextureImporter:
     allowsAlphaSplitting: 0
     overridden: 0
     androidETC2FallbackOverride: 0
+  - buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
-    outline: []
+    sprites:
+    - serializedVersion: 2
+      name: tronc_couleur_0
+      rect:
+        serializedVersion: 2
+        x: 26
+        y: 270
+        width: 443
+        height: 151
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 145.94205, y: 75.5}
+        - {x: 114.34082, y: 69.74005}
+        - {x: 70.898285, y: 64.31531}
+        - {x: 28.888733, y: 64.89734}
+        - {x: -29.995361, y: 75.5}
+        - {x: -65.56378, y: 75.5}
+        - {x: -119.07675, y: 73.68393}
+        - {x: -171.57928, y: 67.8262}
+        - {x: -180.74664, y: 64.24054}
+        - {x: -205.18155, y: 53.143524}
+        - {x: -215.18489, y: 37.86194}
+        - {x: -221.5, y: 14.952637}
+        - {x: -221.5, y: -7.236725}
+        - {x: -209.20044, y: -38.171875}
+        - {x: -190.23419, y: -36.803772}
+        - {x: -197.75519, y: -49.98697}
+        - {x: -187.77634, y: -58.559296}
+        - {x: -169.34406, y: -67.18268}
+        - {x: -120.79022, y: -70.950806}
+        - {x: -68.07527, y: -71.45364}
+        - {x: -33.31717, y: -66.56793}
+        - {x: -10.910599, y: -66.658875}
+        - {x: 59.362457, y: -75.5}
+        - {x: 101.00134, y: -75.5}
+        - {x: 130.61472, y: -70.51407}
+        - {x: 161.4577, y: -63.468018}
+        - {x: 187.84097, y: -54.89044}
+        - {x: 207.69083, y: -40.922028}
+        - {x: 214.93231, y: -30.283813}
+        - {x: 221.5, y: -8.853149}
+        - {x: 221.5, y: 8.30954}
+        - {x: 211.7362, y: 35.910767}
+        - {x: 201.46619, y: 56.122437}
+        - {x: 175.17023, y: 73.65076}
+        - {x: 158.3489, y: 75.5}
+      physicsShape: []
+      tessellationDetail: 0
+    outline:
+    - - {x: 129.12411, y: 81.69357}
+      - {x: 101.49518, y: 99.72745}
+      - {x: 79.47763, y: 101.68497}
+      - {x: 50.467224, y: 96.943146}
+      - {x: -0.24353027, y: 89.95465}
+      - {x: -50.66562, y: 92.201996}
+      - {x: -104.74515, y: 102.17987}
+      - {x: -178.17398, y: 100.828094}
+      - {x: -242.15102, y: 94.768585}
+      - {x: -268.5775, y: 84.488525}
+      - {x: -279.96698, y: 76.041016}
+      - {x: -291.34546, y: 55.10623}
+      - {x: -295.1513, y: 28.612549}
+      - {x: -292.01508, y: 8.570831}
+      - {x: -281.4437, y: -12.463989}
+      - {x: -263.112, y: -10.915924}
+      - {x: -270.39417, y: -23.940369}
+      - {x: -259.06088, y: -33.860535}
+      - {x: -241.80919, y: -41.37732}
+      - {x: -206.73505, y: -45.12674}
+      - {x: -160.07117, y: -45.87616}
+      - {x: -115.569565, y: -44.358826}
+      - {x: -105.86537, y: -40.837433}
+      - {x: -83.734634, y: -40.832}
+      - {x: -31.103577, y: -49.951538}
+      - {x: 28.69754, y: -50.576447}
+      - {x: 86.2962, y: -39.365784}
+      - {x: 118.62009, y: -28.283966}
+      - {x: 139.58508, y: -11.766144}
+      - {x: 149.57574, y: 15.110016}
+      - {x: 149.28082, y: 36.724518}
+      - {x: 141.56857, y: 58.76114}
     physicsShape: []
   spritePackingTag: 
   userData: 

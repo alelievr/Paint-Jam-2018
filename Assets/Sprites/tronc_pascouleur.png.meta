@@ -1,9 +1,10 @@
 fileFormatVersion: 2
 guid: 3a393e2bcea6e41fa9aff072acd2f4ab
-timeCreated: 1519490896
+timeCreated: 1519492016
 licenseType: Free
 TextureImporter:
-  fileIDToRecycleName: {}
+  fileIDToRecycleName:
+    21300000: tronc_pascouleur_0
   externalObjects: {}
   serializedVersion: 4
   mipmaps:
@@ -40,12 +41,12 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteBorder: {x: 26, y: 269, z: 171, w: 219}
   spritePixelsToUnits: 100
   alphaUsage: 1
   alphaIsTransparency: 1
@@ -66,11 +67,106 @@ TextureImporter:
     allowsAlphaSplitting: 0
     overridden: 0
     androidETC2FallbackOverride: 0
+  - buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
-    outline: []
-    physicsShape: []
+    sprites:
+    - serializedVersion: 2
+      name: tronc_pascouleur_0
+      rect:
+        serializedVersion: 2
+        x: 25
+        y: 269
+        width: 446
+        height: 152
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 145.86276, y: 76}
+        - {x: 126.99704, y: 72.22046}
+        - {x: 71.46637, y: 64.71356}
+        - {x: 54.59207, y: 65.44983}
+        - {x: 20.332123, y: 67.18387}
+        - {x: -30.814682, y: 76}
+        - {x: -67.05078, y: 76}
+        - {x: -112.07619, y: 75.37265}
+        - {x: -171.71118, y: 69.03702}
+        - {x: -175.61046, y: 64.74576}
+        - {x: -192.96533, y: 61.572357}
+        - {x: -207.97273, y: 50.20334}
+        - {x: -215.69357, y: 37.392944}
+        - {x: -223, y: 13.585693}
+        - {x: -223, y: -9.795837}
+        - {x: -209.18976, y: -37.104645}
+        - {x: -190.50272, y: -35.239075}
+        - {x: -199.14453, y: -49.292267}
+        - {x: -188.4751, y: -57.168915}
+        - {x: -170.86954, y: -66.57733}
+        - {x: -122.0229, y: -70.83099}
+        - {x: -65.360916, y: -69.87143}
+        - {x: -33.921555, y: -65.83331}
+        - {x: -11.685394, y: -66.38959}
+        - {x: 58.852783, y: -75.43042}
+        - {x: 101.131165, y: -75.410614}
+        - {x: 123.50998, y: -71.1022}
+        - {x: 150.96146, y: -65.638275}
+        - {x: 187.73541, y: -53.959625}
+        - {x: 206.38062, y: -41.85315}
+        - {x: 211.52368, y: -33.914734}
+        - {x: 217.23083, y: -22.822388}
+        - {x: 221.29114, y: -7.280731}
+        - {x: 221.56998, y: 7.1834106}
+        - {x: 218.19931, y: 23.486603}
+        - {x: 199.17017, y: 59.16263}
+        - {x: 174.0293, y: 74.68704}
+        - {x: 158.4347, y: 76}
+      physicsShape: []
+      tessellationDetail: 0
+    outline:
+    - - {x: -246.91559, y: 92.70758}
+      - {x: -276.61646, y: 81.39902}
+      - {x: -293.10672, y: 52.734375}
+      - {x: -295.1741, y: 24.08075}
+      - {x: -288.10724, y: -0.9876709}
+      - {x: -280.79437, y: -14.835175}
+      - {x: -263.4463, y: -12.133728}
+      - {x: -271.20703, y: -24.581268}
+      - {x: -239.60718, y: -43.010162}
+      - {x: -196.73048, y: -46.3692}
+      - {x: -139.13329, y: -46.71936}
+      - {x: -112.41826, y: -42.632477}
+      - {x: -85.72653, y: -42.44864}
+      - {x: -29.695343, y: -49.976044}
+      - {x: 11.345734, y: -51.482788}
+      - {x: 42.35211, y: -48.422913}
+      - {x: 97.97296, y: -35.223633}
+      - {x: 120.85013, y: -27.342896}
+      - {x: 136.67572, y: -15.621277}
+      - {x: 148.26074, y: 7.7947693}
+      - {x: 151.17508, y: 34.45929}
+      - {x: 130.11511, y: 80.91135}
+      - {x: 101.285065, y: 99.98926}
+      - {x: 77.336365, y: 102.86835}
+      - {x: 15.151276, y: 91.49896}
+      - {x: -13.215088, y: 90.213104}
+      - {x: -47.18512, y: 91.885345}
+      - {x: -107.30994, y: 102.183075}
+      - {x: -213.51604, y: 97.823425}
+    physicsShape:
+    - - {x: -320, y: 320}
+      - {x: -320, y: -320}
+      - {x: 320, y: -320}
+      - {x: 320, y: 320}
   spritePackingTag: 
   userData: 
   assetBundleName: 
