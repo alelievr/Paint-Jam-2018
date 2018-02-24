@@ -23,13 +23,15 @@ public class PlayerController : MonoBehaviour
 	{
 		get
 		{
-			if (stop || dead)
+			if (stop || dead || paused)
 				return 0;
 			return (direction ? 1 : -1);
 		}
 	}
 
 	public bool			stop = false;
+
+	bool			paused { get { return (GameManager.instance != null && GameManager.instance.gameState == GameManager.GameState.Pause); } }
 
 	new Rigidbody2D	rigidbody;
 	new Collider2D	collider;
@@ -55,6 +57,11 @@ public class PlayerController : MonoBehaviour
 	{
 		Move();
 
+		// DetectCollisions();
+	}
+
+	void DetectCollisions()
+	{
 		stop = false;
 		
 		int nCollision = collider.Cast(Vector2.right * directionMultiplier, contactFilter, results, .2f);

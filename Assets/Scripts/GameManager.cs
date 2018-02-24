@@ -3,30 +3,54 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class GameManager : MonoBehaviour {
+public class GameManager : MonoBehaviour
+{
+	public	enum		GameState
+	{
+		Play,
+		Pause,
+		End
+	}
+
+	public static GameManager	instance;
 
 	public	int			level;
-	public	enum		gameStates {Play, Pause, End};
-	public gameStates	gameState;
+	public GameState	gameState;
 
-	// Use this for initialization
-	void Start () {
-		gameState = gameStates.Pause;
+	void Awake()
+	{
+		instance = this;
+	}
+
+	void Start ()
+	{
+		gameState = GameState.Pause;
 	}
 	
-	// Update is called once per frame
-	void Update () {
-		if (gameState == gameStates.Play) {
+	void Update ()
+	{
+		if (Input.GetKeyDown(KeyCode.R))
+			SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+		
+		if (gameState == GameState.Play)
+		{
 		  	
 		}
 	}
 
-	public void Win () {
-		gameState = gameStates.End;
+	public void Play()
+	{
+		gameState = GameState.Play;
+	}
+
+	public void Win ()
+	{
+		gameState = GameState.End;
 		LoadNext();
 	}
 	
-	IEnumerator LoadNext() {
+	IEnumerator LoadNext()
+	{
 		yield return new WaitForSeconds(5f);
 		SceneManager.LoadScene("Level" + (level + 1).ToString());
 	}
