@@ -75,6 +75,7 @@ Camera:
   m_TargetEye: 3
   m_HDR: 1
   m_AllowMSAA: 0
+  m_AllowDynamicResolution: 0
   m_ForceIntoRT: 0
   m_OcclusionCulling: 1
   m_StereoConvergence: 10
@@ -97,6 +98,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6d24d2e3a862441fead3a5939f955686, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  nextLevelName: Game
+  nextSceneKeys: 
 --- !u!114 &114960090482360766
 MonoBehaviour:
   m_ObjectHideFlags: 1
