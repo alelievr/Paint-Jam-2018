@@ -21,13 +21,18 @@ public class GameManager : MonoBehaviour {
 		}
 	}
 
+	public void Restart() {
+		SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+	}
+
 	public void Win () {
 		gameState = gameStates.End;
-		LoadNext();
+		Debug.Log("Level" + (level + 1).ToString());
+		StartCoroutine(LoadNext());
 	}
 	
 	IEnumerator LoadNext() {
-		yield return new WaitForSeconds(5f);
+		yield return new WaitForSeconds(2f);
 		SceneManager.LoadScene("Level" + (level + 1).ToString());
 	}
 }
