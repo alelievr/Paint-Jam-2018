@@ -31,7 +31,14 @@ public class PlayerController : MonoBehaviour
 
 	public bool			stop = false;
 
-	bool			paused { get { return (GameManager.instance != null && GameManager.instance.gameState == GameManager.GameState.Pause); } }
+	bool			paused
+	{
+		get
+		{
+			Debug.Log("GameManager instance: " + GameManager.instance.gameState);
+			return (GameManager.instance != null && GameManager.instance.gameState == GameManager.GameState.Pause);
+		}
+	}
 
 	new Rigidbody2D	rigidbody;
 	new Collider2D	collider;

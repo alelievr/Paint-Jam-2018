@@ -13,6 +13,7 @@ public class GameManager : MonoBehaviour
 	}
 
 	public static GameManager	instance;
+	public GameObject			menuPause;
 
 	public	int			level;
 	public GameState	gameState;
@@ -25,12 +26,13 @@ public class GameManager : MonoBehaviour
 	void Start ()
 	{
 		gameState = GameState.Pause;
+		menuPause.SetActive(false);
 	}
 	
 	void Update ()
 	{
 		if (Input.GetKeyDown(KeyCode.R))
-			SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+			Restart();
 		
 		if (gameState == GameState.Play)
 		{
@@ -47,13 +49,28 @@ public class GameManager : MonoBehaviour
 		SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
 	}
 
+	public void Pause () {
+		if (gameState != GameState.Pause) {
+			gameState = GameState.Pause;
+			menuPause.SetActive(true);
+		}
+		else {
+			gameState = GameState.Play;
+			menuPause.SetActive(false);
+		}
+	}
+
 	public void Win () {
 		gameState = GameState.End;
 		Debug.Log("Level" + (level + 1).ToString());
 		StartCoroutine(LoadNext());
 	}
+
+	public void LoadLevel (string lvl) {
+		SceneManager.LoadScene("Level" + lvl);
+	}
 	
-	IEnumerator LoadNext() {
+	IEnumerator LoadNext () {
 		yield return new WaitForSeconds(2f);
 		SceneManager.LoadScene("Level" + (level + 1).ToString());
 	}
