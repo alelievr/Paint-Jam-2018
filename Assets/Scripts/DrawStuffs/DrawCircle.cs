@@ -9,12 +9,17 @@ using UnityEngine;
 /// </summary>
 public class DrawCircle : DrawShape
 {
+    const float minRadius = .05f;
+
     public Color FillColor = Color.white;
 
     private MeshFilter _meshFilter;
     private Rigidbody2D _rigidbody2D;
     private CircleCollider2D _circleCollider2D;
     private LineRenderer _lineRenderer;
+    
+    Collider2D[] results = new Collider2D[10];
+    ContactFilter2D contactFilter;
 
     // Start and end vertices (in absolute coordinates)
     private readonly List<Vector2> _vertices = new List<Vector2>(2);
@@ -43,6 +48,9 @@ public class DrawCircle : DrawShape
         _lineRenderer = GetComponent<LineRenderer>();
 
         _rigidbody2D.useAutoMass = true;
+        
+        contactFilter = new ContactFilter2D();
+        contactFilter.useTriggers = false;
     }
 
     public override void AddVertex(Vector2 vertex)
@@ -53,6 +61,19 @@ public class DrawCircle : DrawShape
 
         _vertices.Add(vertex);
         UpdateShape(vertex);
+    }
+    
+
+    public override void Validate()
+    {
+        _circleCollider2D.enabled = true;
+        bool overlaps = _circleCollider2D.OverlapCollider(contactFilter, results) != 0;
+
+        if (overlaps)
+            Remove();
+        
+        if (_circleCollider2D.radius < minRadius)
+            Remove();
     }
 
     public override void UpdateShape(Vector2 newVertex)
@@ -77,6 +98,15 @@ public class DrawCircle : DrawShape
         // Update the shape's outline
         _lineRenderer.positionCount = _meshFilter.mesh.vertices.Length;
         _lineRenderer.SetPositions(_meshFilter.mesh.vertices);
+        
+        _circleCollider2D.enabled = true;
+        bool overlaps = _circleCollider2D.OverlapCollider(contactFilter, results) != 0;
+        bool tooSmall = _circleCollider2D.radius < minRadius;
+
+        _circleCollider2D.enabled = !overlaps;
+        Color c = (overlaps || tooSmall) ? Color.red : Color.white;
+        _lineRenderer.startColor = c;
+        _lineRenderer.endColor = c;
     }
 
     /// <summary>

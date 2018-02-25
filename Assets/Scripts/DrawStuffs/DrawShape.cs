@@ -29,4 +29,11 @@ public abstract class DrawShape : MonoBehaviour
     /// The shape should also update its mesh and collider.
     /// </summary>
     public abstract void UpdateShape(Vector2 newVertex);
+
+    public abstract void Validate();
+
+    public void Remove()
+    {
+        Destroy(gameObject);
+    }
 }

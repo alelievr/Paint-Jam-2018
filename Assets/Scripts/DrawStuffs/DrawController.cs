@@ -41,6 +41,9 @@ public class DrawController : MonoBehaviour
                     !EventSystem.current.IsPointerOverGameObject();
         var canUpdateShape = CurrentShapeToDraw != null && IsDrawingShape;
 
+        if (GameManager.instance.gameState == GameManager.GameState.Pause)
+            return ;
+
         if (clickDown || clickUp) {
             AddShapeVertex(mousePos);
         } else if (canUpdateShape) {
@@ -63,6 +66,8 @@ public class DrawController : MonoBehaviour
 
             CurrentShapeToDraw.AddVertex(position);
             CurrentShapeToDraw.AddVertex(position);
+            
+            CurrentShapeToDraw.SimulatingPhysics = false;
 
             IsDrawingShape = true;
 
@@ -75,6 +80,7 @@ public class DrawController : MonoBehaviour
             if (IsDrawingShape) {
                 CurrentShapeToDraw.AddVertex(position);
             } else {
+                CurrentShapeToDraw.Validate();
                 CurrentShapeToDraw.SimulatingPhysics = true;
                 CurrentShapeToDraw = null;
             }
@@ -90,6 +96,9 @@ public class DrawController : MonoBehaviour
         if (CurrentShapeToDraw == null) {
             return;
         }
+        
+        if (Input.GetKeyDown(KeyCode.Escape))
+            CurrentShapeToDraw.Remove();
 
         CurrentShapeToDraw.UpdateShape(position);
     }

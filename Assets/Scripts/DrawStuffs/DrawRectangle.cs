@@ -9,12 +9,18 @@ using UnityEngine;
 /// </summary>
 public class DrawRectangle : DrawShape
 {
+    const float minSize = .05f;
+
     public Color FillColor = Color.white;
 
     private MeshFilter _meshFilter;
     private Rigidbody2D _rigidbody2D;
     private BoxCollider2D _boxCollider2D;
     private LineRenderer _lineRenderer;
+    private MeshRenderer _meshRenderer;
+
+    Collider2D[] results = new Collider2D[10];
+    ContactFilter2D contactFilter;
 
     // Start and end vertices (in absolute coordinates)
     private readonly List<Vector2> _vertices = new List<Vector2>(2);
@@ -41,8 +47,27 @@ public class DrawRectangle : DrawShape
         _rigidbody2D = GetComponent<Rigidbody2D>();
         _boxCollider2D = GetComponent<BoxCollider2D>();
         _lineRenderer = GetComponent<LineRenderer>();
+        _meshRenderer = GetComponent< MeshRenderer >();
+
+        _lineRenderer.sharedMaterial = _lineRenderer.material;
 
         _rigidbody2D.useAutoMass = true;
+
+        contactFilter = new ContactFilter2D();
+
+        contactFilter.useTriggers = false;
+    }
+
+    public override void Validate()
+    {
+        _boxCollider2D.enabled = true;
+        bool overlaps = _boxCollider2D.OverlapCollider(contactFilter, results) != 0;
+
+        if (overlaps)
+            Remove();
+        
+        if (_boxCollider2D.size.x < minSize || _boxCollider2D.size.y < minSize)
+            Remove();
     }
 
     public override void AddVertex(Vector2 vertex)
@@ -78,6 +103,15 @@ public class DrawRectangle : DrawShape
         // Update the shape's outline
         _lineRenderer.positionCount = _meshFilter.mesh.vertices.Length;
         _lineRenderer.SetPositions(_meshFilter.mesh.vertices);
+
+        _boxCollider2D.enabled = true;
+        bool overlaps = _boxCollider2D.OverlapCollider(contactFilter, results) != 0;
+        bool tooSmall = _boxCollider2D.size.x < minSize || _boxCollider2D.size.y < minSize;
+
+        _boxCollider2D.enabled = !overlaps;
+        Color c = (overlaps || tooSmall) ? Color.red : Color.white;
+        _lineRenderer.startColor = c;
+        _lineRenderer.endColor = c;
     }
 
     /// <summary>

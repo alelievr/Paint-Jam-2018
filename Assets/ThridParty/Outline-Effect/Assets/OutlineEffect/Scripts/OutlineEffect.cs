@@ -44,7 +44,8 @@ public class OutlineEffect : MonoBehaviour
 
     void OnDestroy()
     {
-        renderTexture.Release();
+        if (renderTexture != null)
+            renderTexture.Release();
         DestroyMaterials();
     }
 
