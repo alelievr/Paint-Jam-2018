@@ -26,6 +26,7 @@ public class AutoSave
 	{
 		if (EditorApplication.isPlaying || EditorApplication.isPaused)
 			return ;
+		
 		EditorSceneManager.SaveScene(EditorSceneManager.GetActiveScene());
 		AssetDatabase.SaveAssets();
 		lastSave = EditorApplication.timeSinceStartup;

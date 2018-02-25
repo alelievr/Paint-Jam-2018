@@ -63,11 +63,27 @@ public class DrawCircle : DrawShape
         UpdateShape(vertex);
     }
     
+    public bool Overlaps()
+    {
+        int n = _circleCollider2D.OverlapCollider(contactFilter, results);
+
+        if (n == 0)
+            return false;
+        
+        if (n == 1)
+        {
+            var col = results[0];
+            if (col.gameObject.layer == LayerMask.NameToLayer("Metaball"))
+                return false;
+        }
+
+        return true;
+    }
 
     public override void Validate()
     {
         _circleCollider2D.enabled = true;
-        bool overlaps = _circleCollider2D.OverlapCollider(contactFilter, results) != 0;
+        bool overlaps = Overlaps();
 
         if (overlaps)
             Remove();
@@ -100,7 +116,7 @@ public class DrawCircle : DrawShape
         _lineRenderer.SetPositions(_meshFilter.mesh.vertices);
         
         _circleCollider2D.enabled = true;
-        bool overlaps = _circleCollider2D.OverlapCollider(contactFilter, results) != 0;
+        bool overlaps = Overlaps();
         bool tooSmall = _circleCollider2D.radius < minRadius;
 
         _circleCollider2D.enabled = !overlaps;
