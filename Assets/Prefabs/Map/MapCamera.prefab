@@ -40,6 +40,7 @@ GameObject:
   - component: {fileID: 114452778858498622}
   - component: {fileID: 114588264720216484}
   - component: {fileID: 114152769935299918}
+  - component: {fileID: 114422581600102018}
   m_Layer: 0
   m_Name: MainCamera
   m_TagString: MainCamera
@@ -197,7 +198,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1373643096185664}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -10.000001}
+  m_LocalPosition: {x: 0.72, y: -0.73000014, z: -10.000001}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4008138901809436}
@@ -237,7 +238,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1460586148130192}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -2.475121, y: -0.08197951, z: -9.963706}
+  m_LocalPosition: {x: -3.5984833, y: 0.66031325, z: -9.963706}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4368667854473202}
@@ -251,7 +252,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1184824164129076}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 1.2381849, y: -0.3357041, z: -10.000001}
+  m_LocalPosition: {x: 0.72, y: -0.73000014, z: -10.000001}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4135285360371384}
@@ -277,7 +278,7 @@ Camera:
   far clip plane: 5000
   field of view: 40
   orthographic: 1
-  orthographic size: 4
+  orthographic size: 2.63
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -317,10 +318,10 @@ PolygonCollider2D:
   m_AutoTiling: 0
   m_Points:
     m_Paths:
-    - - {x: 10.454343, y: 3.6633787}
-      - {x: -5.885216, y: 3.6705399}
-      - {x: -5.9641075, y: -6.5168943}
-      - {x: 10.47067, y: -6.502798}
+    - - {x: 6.1248255, y: 1.9912916}
+      - {x: -4.441685, y: 2.0070553}
+      - {x: -4.481562, y: -3.6298323}
+      - {x: 6.1985974, y: -3.5572152}
 --- !u!81 &81063973806685062
 AudioListener:
   m_ObjectHideFlags: 1
@@ -340,6 +341,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sourceCamera: {fileID: 20644171708373214}
+--- !u!114 &114422581600102018
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1184824164129076}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ef5f8406cef0f4801b603cd2df3ae3b5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  metaballCameraPrefab: {fileID: 1071162157214306, guid: 052b8b066e72a4765aa584b7508fcbcb,
+    type: 2}
 --- !u!114 &114452778858498622
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -496,7 +510,7 @@ MonoBehaviour:
   m_Follow: {fileID: 0}
   m_Lens:
     FieldOfView: 40
-    OrthographicSize: 3
+    OrthographicSize: 2.37
     NearClipPlane: 0.1
     FarClipPlane: 5000
     Dutch: 0
@@ -521,7 +535,7 @@ MonoBehaviour:
   m_Follow: {fileID: 4048110941064828}
   m_Lens:
     FieldOfView: 40
-    OrthographicSize: 4
+    OrthographicSize: 2.63
     NearClipPlane: 0.1
     FarClipPlane: 5000
     Dutch: 0

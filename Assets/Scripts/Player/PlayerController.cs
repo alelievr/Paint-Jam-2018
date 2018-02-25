@@ -103,7 +103,7 @@ public class PlayerController : MonoBehaviour
 	{
 		RaycastHit2D hitGround, hitMid, hitHead;
 		Vector2 pos = transform.position;
-		Vector2 playerOffset = new Vector2(.15f, 0);
+		Vector2 playerOffset = new Vector2(.15f * directionMultiplier, 0);
 		Vector2 groundPos = pos + new Vector2(0, groundRaycast) + playerOffset;
 		Vector2 midPos = pos + new Vector2(0, middleRaycast) + playerOffset;
 		Vector2 headPos = pos + new Vector2(0, headRaycast) + playerOffset;
@@ -132,10 +132,7 @@ public class PlayerController : MonoBehaviour
 			return false;
 		
 		if (rigidbody.velocity.y > .1f || rigidbody.velocity.y < -.1f)
-		{
-			Debug.Log("Velo");
 			return false;
-		}
 		
 		int n = groundCollider.OverlapCollider(contactFilter, overlapResults);
 

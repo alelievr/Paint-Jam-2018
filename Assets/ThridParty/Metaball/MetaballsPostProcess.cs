@@ -6,6 +6,7 @@ public class MetaballsPostProcess : MonoBehaviour
 {
 
 	public GameObject	metaballCameraPrefab;
+	public Color		metaballColor;
 
 	Camera				mainCamera;
 	Camera				metaballCamera;
@@ -61,6 +62,7 @@ public class MetaballsPostProcess : MonoBehaviour
     void OnRenderImage(RenderTexture source, RenderTexture destination)
 	{
 		metaballMaterial.SetTexture("_MetaballTex", metaballTexture);
+		metaballMaterial.SetColor("_Color", metaballColor);
 		Graphics.Blit(source, destination, metaballMaterial);
 	}
 
