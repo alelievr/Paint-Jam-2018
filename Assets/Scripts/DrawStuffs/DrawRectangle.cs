@@ -38,6 +38,8 @@ public class DrawRectangle : DrawShape
         set {
             _simulating = value;
             _rigidbody2D.bodyType = value ? RigidbodyType2D.Dynamic : RigidbodyType2D.Static;
+            if (value == true)
+                gameObject.layer = LayerMask.NameToLayer("Default");
         }
     }
 
@@ -48,6 +50,8 @@ public class DrawRectangle : DrawShape
         _boxCollider2D = GetComponent<BoxCollider2D>();
         _lineRenderer = GetComponent<LineRenderer>();
         _meshRenderer = GetComponent< MeshRenderer >();
+
+        gameObject.layer = LayerMask.NameToLayer("Draw");
 
         _lineRenderer.sharedMaterial = _lineRenderer.material;
 
