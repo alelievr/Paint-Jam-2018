@@ -62,10 +62,27 @@ public class DrawRectangle : DrawShape
         contactFilter.useTriggers = false;
     }
 
+    public bool Overlaps()
+    {
+        int n = _boxCollider2D.OverlapCollider(contactFilter, results);
+
+        if (n == 0)
+            return false;
+        
+        if (n == 1)
+        {
+            var col = results[0];
+            if (col.gameObject.layer == LayerMask.NameToLayer("Metaball"))
+                return false;
+        }
+
+        return true;
+    }
+
     public override void Validate()
     {
         _boxCollider2D.enabled = true;
-        bool overlaps = _boxCollider2D.OverlapCollider(contactFilter, results) != 0;
+        bool overlaps = Overlaps();
 
         if (overlaps)
             Remove();
@@ -109,7 +126,7 @@ public class DrawRectangle : DrawShape
         _lineRenderer.SetPositions(_meshFilter.mesh.vertices);
 
         _boxCollider2D.enabled = true;
-        bool overlaps = _boxCollider2D.OverlapCollider(contactFilter, results) != 0;
+        bool overlaps = Overlaps();
         bool tooSmall = _boxCollider2D.size.x < minSize || _boxCollider2D.size.y < minSize;
 
         _boxCollider2D.enabled = !overlaps;

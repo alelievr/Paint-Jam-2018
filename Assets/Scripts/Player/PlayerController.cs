@@ -70,6 +70,10 @@ public class PlayerController : MonoBehaviour
 	{
 		if (head.hit && !dead)
 			Die();
+		
+		if (dead && Input.GetKeyDown(KeyCode.Space))
+			GameManager.instance.Restart();
+
 	}
 
 	void FixedUpdate()

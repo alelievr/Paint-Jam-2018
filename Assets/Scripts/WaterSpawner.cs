@@ -19,7 +19,6 @@ public class WaterSpawner : MonoBehaviour
 		{
 			yield return new WaitForSeconds(Random.Range(spawnTimerRange.x, spawnTimerRange.y));
 			var g = GameObject.Instantiate(waterPrefab, transform.position, Quaternion.identity);
-			// g.transform.localScale = Vector3.one * .10f;
 			g.GetComponent< Rigidbody2D >().AddForce(transform.right * spawnForce, ForceMode2D.Force);
 		}
 	}
