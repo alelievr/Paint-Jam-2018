@@ -41,7 +41,13 @@ public class PlayerController : MonoBehaviour
 	public float		middleRaycast = .2f;
 	public float		headRaycast = .4f;
 
-	bool			paused { get { return (GameManager.instance != null && GameManager.instance.gameState == GameManager.GameState.Pause); } }
+	bool			paused
+	{
+		get
+		{
+			return (GameManager.instance != null && GameManager.instance.gameState == GameManager.GameState.Pause);
+		}
+	}
 
 	bool			canJump = true;
 

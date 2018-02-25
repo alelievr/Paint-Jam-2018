@@ -17,6 +17,7 @@ TagManager:
   - 
   - PlayerFoot
   - Outline
+  - Metaball
   - 
   - 
   - 
@@ -37,8 +38,7 @@ TagManager:
   - 
   - 
   - 
-  - 
-  - 
+  - PowerfulGUI
   m_SortingLayers:
   - name: Background
     uniqueID: 671702401
@@ -48,4 +48,7 @@ TagManager:
     locked: 0
   - name: Player
     uniqueID: 255420905
+    locked: 0
+  - name: GUI
+    uniqueID: 597996613
     locked: 0

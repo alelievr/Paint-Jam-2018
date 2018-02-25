@@ -10,6 +10,8 @@ public class CameraController : MonoBehaviour
 
 	CinemachineBrain	brain;
 
+	bool				cameraSwitched = false;
+
 	void Start ()
 	{
 		playerCamera.SetActive(false);
@@ -18,9 +20,10 @@ public class CameraController : MonoBehaviour
 	
 	void Update ()
 	{
-		if (!brain.IsBlending && brain.ActiveVirtualCamera.Name == "PlayerCamera")
+		if (!brain.IsBlending && brain.ActiveVirtualCamera.Name == "PlayerCamera" && !cameraSwitched)
 		{
 			GameManager.instance.Play();
+			cameraSwitched = true;
 		}
 		
 		if (Input.GetKeyDown(KeyCode.Space))
