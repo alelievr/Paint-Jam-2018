@@ -20,6 +20,8 @@ public class EndFlag : MonoBehaviour {
 		if (other.CompareTag("Player"))
 		{
 			Debug.Log("arrived");
+			SpriteRenderer sprite =  gameObject.GetComponent<SpriteRenderer>();
+			sprite.enabled = false;
 			GM.Win();
 		}
 	}
