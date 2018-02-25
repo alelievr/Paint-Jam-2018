@@ -70,6 +70,10 @@ public class PlayerController : MonoBehaviour
 	{
 		if (head.hit && !dead)
 			Die();
+		
+		if (dead && Input.GetKeyDown(KeyCode.Space))
+			GameManager.instance.Restart();
+
 	}
 
 	void FixedUpdate()
@@ -131,7 +135,7 @@ public class PlayerController : MonoBehaviour
 		if (!canJump)
 			return false;
 		
-		if (rigidbody.velocity.y > .1f || rigidbody.velocity.y < -.1f)
+		if (rigidbody.velocity.y > .4f || rigidbody.velocity.y < -.4f)
 			return false;
 		
 		int n = groundCollider.OverlapCollider(contactFilter, overlapResults);

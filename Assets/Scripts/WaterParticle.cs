@@ -23,6 +23,7 @@ public class WaterParticle : MonoBehaviour
 		{
 			float a = (1 - (Time.time - t)) * startScale;
 			transform.localScale = Vector3.one * a;
+			yield return null;
 		}
 	}
 	

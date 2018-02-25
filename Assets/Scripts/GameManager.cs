@@ -33,11 +33,6 @@ public class GameManager : MonoBehaviour
 	{
 		if (Input.GetKeyDown(KeyCode.R))
 			Restart();
-		
-		if (gameState == GameState.Play)
-		{
-		  	
-		}
 	}
 
 	public void Play()

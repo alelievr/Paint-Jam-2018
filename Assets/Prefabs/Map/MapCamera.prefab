@@ -57,7 +57,6 @@ GameObject:
   m_Component:
   - component: {fileID: 4203040525370576}
   - component: {fileID: 114881691604976654}
-  - component: {fileID: 114606458070259848}
   m_Layer: 0
   m_Name: PreviewCamera
   m_TagString: Untagged
@@ -198,7 +197,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1373643096185664}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.72, y: -0.73000014, z: -10.000001}
+  m_LocalPosition: {x: 5.77, y: 0.82, z: -10.000001}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4008138901809436}
@@ -238,7 +237,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1460586148130192}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -3.5984833, y: 0.66031325, z: -9.963706}
+  m_LocalPosition: {x: -0.7000453, y: 0.6703296, z: -9.963706}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4368667854473202}
@@ -252,7 +251,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1184824164129076}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.72, y: -0.73000014, z: -10.000001}
+  m_LocalPosition: {x: -0.7000453, y: 0.6703296, z: -9.963706}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4135285360371384}
@@ -267,7 +266,7 @@ Camera:
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 1
-  m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
+  m_BackGroundColor: {r: 0.037251286, g: 0.17431696, b: 0.3897059, a: 0}
   m_NormalizedViewPortRect:
     serializedVersion: 2
     x: 0
@@ -278,7 +277,7 @@ Camera:
   far clip plane: 5000
   field of view: 40
   orthographic: 1
-  orthographic size: 2.63
+  orthographic size: 3
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -318,10 +317,10 @@ PolygonCollider2D:
   m_AutoTiling: 0
   m_Points:
     m_Paths:
-    - - {x: 6.1248255, y: 1.9912916}
-      - {x: -4.441685, y: 2.0070553}
-      - {x: -4.481562, y: -3.6298323}
-      - {x: 6.1985974, y: -3.5572152}
+    - - {x: 21.905611, y: 4.722745}
+      - {x: -4.9333777, y: 4.6719294}
+      - {x: -5.107658, y: -3.429891}
+      - {x: 22.074335, y: -3.5782847}
 --- !u!81 &81063973806685062
 AudioListener:
   m_ObjectHideFlags: 1
@@ -354,6 +353,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   metaballCameraPrefab: {fileID: 1071162157214306, guid: 052b8b066e72a4765aa584b7508fcbcb,
     type: 2}
+  metaballColor: {r: 0, g: 0.37931037, b: 1, a: 0}
 --- !u!114 &114452778858498622
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -436,22 +436,6 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: Cinemachine.CinemachineBrain+VcamEvent, Assembly-CSharp, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
---- !u!114 &114606458070259848
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1373643096185664}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a2fba25a5cd15594e8f050a11e386c80, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_ConfineMode: 0
-  m_BoundingVolume: {fileID: 0}
-  m_BoundingShape2D: {fileID: 60061871625584492}
-  m_ConfineScreenEdges: 1
-  m_Damping: 0
 --- !u!114 &114654519192736032
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -468,16 +452,16 @@ MonoBehaviour:
   m_XDamping: 1
   m_YDamping: 1
   m_ZDamping: 1
-  m_ScreenX: 0.5
-  m_ScreenY: 0.5
+  m_ScreenX: 0.24626857
+  m_ScreenY: 0.48125035
   m_CameraDistance: 10
-  m_DeadZoneWidth: 0.1
-  m_DeadZoneHeight: 0.1
+  m_DeadZoneWidth: 0.04626865
+  m_DeadZoneHeight: 0.08333333
   m_DeadZoneDepth: 0
   m_UnlimitedSoftZone: 0
-  m_SoftZoneWidth: 0.8
+  m_SoftZoneWidth: 0.38208956
   m_SoftZoneHeight: 0.8
-  m_BiasX: 0
+  m_BiasX: 0.000000044372346
   m_BiasY: 0
   m_GroupFramingMode: 2
   m_AdjustmentMode: 2
@@ -510,7 +494,7 @@ MonoBehaviour:
   m_Follow: {fileID: 0}
   m_Lens:
     FieldOfView: 40
-    OrthographicSize: 2.37
+    OrthographicSize: 3
     NearClipPlane: 0.1
     FarClipPlane: 5000
     Dutch: 0
@@ -535,7 +519,7 @@ MonoBehaviour:
   m_Follow: {fileID: 4048110941064828}
   m_Lens:
     FieldOfView: 40
-    OrthographicSize: 2.63
+    OrthographicSize: 6.27
     NearClipPlane: 0.1
     FarClipPlane: 5000
     Dutch: 0
