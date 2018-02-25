@@ -41,11 +41,12 @@ Shader "Hidden/MetaballEffect"
 		{
 			float ca = color.a;
 			color = _Color;
-			color.a = _Color.a + min(.0, ca - .8) + .2;
+			color.a = _Color.a + min(.0, ca - .8) + .0;
 		}
 
 		//color blending:
-		half4 finalColor = (1 - color.a) * original * original.a + color * color.a;
+		// half4 finalColor = (1 - color.a) * original * original.a + color * color.a;
+		half4 finalColor = color + original;
 
 		return finalColor;
 	}
