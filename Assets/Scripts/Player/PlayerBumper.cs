@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class PlayerBumper : MonoBehaviour
 {
+	public AudioSource boingSound;
+	[Space]
 	public float	bumperPower = 1;
 
 	void OnTriggerEnter2D(Collider2D other)
@@ -15,6 +17,7 @@ public class PlayerBumper : MonoBehaviour
 			Vector2 v = rb.velocity;
 			v.y = 0;
 			rb.velocity = v;
+			boingSound.Play();
 			rb.AddForce(Vector2.up * bumperPower, ForceMode2D.Impulse);
 		}
 	}

@@ -188,6 +188,10 @@ Prefab:
       propertyPath: m_Name
       value: GM&Canvas
       objectReference: {fileID: 0}
+    - target: {fileID: 1559510232401766, guid: f5c38c9d6c57541938e2535bd8ebf5b8, type: 2}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: f5c38c9d6c57541938e2535bd8ebf5b8, type: 2}
   m_IsPrefabParent: 0
@@ -245,7 +249,7 @@ Prefab:
       objectReference: {fileID: 2050531795}
     - target: {fileID: 4800585654612482, guid: 447aea98d606546048f32293b9ad129b, type: 2}
       propertyPath: m_LocalPosition.x
-      value: -3.5984833
+      value: -2.787121
       objectReference: {fileID: 0}
     - target: {fileID: 4800585654612482, guid: 447aea98d606546048f32293b9ad129b, type: 2}
       propertyPath: m_LocalPosition.y
@@ -2541,7 +2545,7 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4685677951721978, guid: 7eebdcb2b649b4e76b1d729d4e18c477, type: 2}
       propertyPath: m_LocalPosition.x
-      value: -4.5733624
+      value: -3.762
       objectReference: {fileID: 0}
     - target: {fileID: 4685677951721978, guid: 7eebdcb2b649b4e76b1d729d4e18c477, type: 2}
       propertyPath: m_LocalPosition.y
