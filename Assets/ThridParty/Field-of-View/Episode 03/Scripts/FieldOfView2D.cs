@@ -17,6 +17,7 @@ public class FieldOfView2D : MonoBehaviour {
 	public float meshResolution;
 	public int edgeResolveIterations;
 	public float edgeDstThreshold;
+	public float alphaShift = 0;
 
 	public float maskCutawayDst = .1f;
 
@@ -93,10 +94,10 @@ public class FieldOfView2D : MonoBehaviour {
 		Vector2[] uvs = new Vector2[vertexCount];
 
 		vertices [0] = Vector3.zero;
-		uvs[0] = Vector2.zero;
+		uvs[0] = Vector2.one * alphaShift;
 		for (int i = 0; i < vertexCount - 1; i++) {
 			vertices [i + 1] = transform.InverseTransformPoint(viewPoints [i]) + Vector3.forward * maskCutawayDst;
-			uvs[i + 1] = Vector2.one * vertices[i + 1].magnitude / viewRadius;
+			uvs[i + 1] = (Vector2.one * vertices[i + 1].magnitude / viewRadius) + Vector2.one * alphaShift;
 			
 			if (i < vertexCount - 2) {
 				triangles [i * 3] = 0;

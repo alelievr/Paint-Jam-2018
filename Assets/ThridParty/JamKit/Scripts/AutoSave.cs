@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEditor;
 using UnityEditor.SceneManagement;
 
-[InitializeOnLoad]
+// [InitializeOnLoad]
 public class AutoSave
 {
 	static public float		saveTimeout = 60 * 2; //2 mins
