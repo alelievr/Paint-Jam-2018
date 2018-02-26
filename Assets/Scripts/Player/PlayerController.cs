@@ -90,7 +90,10 @@ public class PlayerController : MonoBehaviour
 		if (WillJump() && IsGrounded())
 			Jump();
 
-		renderer.flipX = !direction;
+		if (direction)
+			transform.eulerAngles = new Vector3(0,180,0);
+		else
+			transform.eulerAngles = new Vector3(0,0,0);
 		// DetectCollisions();
 	}
 
