@@ -205,12 +205,12 @@ Prefab:
       propertyPath: m_RootOrder
       value: 5
       objectReference: {fileID: 0}
-    - target: {fileID: 114748085640541656, guid: f5c38c9d6c57541938e2535bd8ebf5b8,
-        type: 2}
-      propertyPath: level
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 223667359470092924, guid: f5c38c9d6c57541938e2535bd8ebf5b8,
+        type: 2}
+      propertyPath: m_Camera
+      value: 
+      objectReference: {fileID: 203955999}
+    - target: {fileID: 223660272089500572, guid: f5c38c9d6c57541938e2535bd8ebf5b8,
         type: 2}
       propertyPath: m_Camera
       value: 
@@ -395,7 +395,7 @@ Prefab:
       objectReference: {fileID: 2050531795}
     - target: {fileID: 4800585654612482, guid: 447aea98d606546048f32293b9ad129b, type: 2}
       propertyPath: m_LocalPosition.x
-      value: -2.271189
+      value: -2.2950394
       objectReference: {fileID: 0}
     - target: {fileID: 4800585654612482, guid: 447aea98d606546048f32293b9ad129b, type: 2}
       propertyPath: m_LocalPosition.y

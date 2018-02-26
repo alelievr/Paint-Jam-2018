@@ -367,6 +367,36 @@ Prefab:
       value: 
       objectReference: {fileID: 12800000, guid: 5cd8d6deab5fe4241a1e505c5a15d3b6,
         type: 3}
+    - target: {fileID: 224619967424915428, guid: f5c38c9d6c57541938e2535bd8ebf5b8,
+        type: 2}
+      propertyPath: m_AnchoredPosition.x
+      value: 2.249
+      objectReference: {fileID: 0}
+    - target: {fileID: 224619967424915428, guid: f5c38c9d6c57541938e2535bd8ebf5b8,
+        type: 2}
+      propertyPath: m_AnchoredPosition.y
+      value: 3.857
+      objectReference: {fileID: 0}
+    - target: {fileID: 224619967424915428, guid: f5c38c9d6c57541938e2535bd8ebf5b8,
+        type: 2}
+      propertyPath: m_LocalRotation.z
+      value: -0.3451262
+      objectReference: {fileID: 0}
+    - target: {fileID: 224619967424915428, guid: f5c38c9d6c57541938e2535bd8ebf5b8,
+        type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 0.93855625
+      objectReference: {fileID: 0}
+    - target: {fileID: 224619967424915428, guid: f5c38c9d6c57541938e2535bd8ebf5b8,
+        type: 2}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: -40.379
+      objectReference: {fileID: 0}
+    - target: {fileID: 114760658566104240, guid: f5c38c9d6c57541938e2535bd8ebf5b8,
+        type: 2}
+      propertyPath: m_Text
+      value: It's your world so you decide
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: f5c38c9d6c57541938e2535bd8ebf5b8, type: 2}
   m_IsPrefabParent: 0
@@ -3006,11 +3036,11 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4840228788789388, guid: 447aea98d606546048f32293b9ad129b, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 0.74
+      value: 0.7400224
       objectReference: {fileID: 0}
     - target: {fileID: 4840228788789388, guid: 447aea98d606546048f32293b9ad129b, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 2.8
+      value: 2.8000112
       objectReference: {fileID: 0}
     - target: {fileID: 114722446273249648, guid: 447aea98d606546048f32293b9ad129b,
         type: 2}
@@ -3019,11 +3049,11 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4203040525370576, guid: 447aea98d606546048f32293b9ad129b, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 2.8
+      value: 2.8000112
       objectReference: {fileID: 0}
     - target: {fileID: 4203040525370576, guid: 447aea98d606546048f32293b9ad129b, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 0.74
+      value: 0.7400224
       objectReference: {fileID: 0}
     - target: {fileID: 114881691604976654, guid: 447aea98d606546048f32293b9ad129b,
         type: 2}
@@ -3037,15 +3067,27 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4840228788789388, guid: 447aea98d606546048f32293b9ad129b, type: 2}
       propertyPath: m_LocalPosition.z
-      value: -10.000001
+      value: -10.000022
       objectReference: {fileID: 0}
     - target: {fileID: 4800585654612482, guid: 447aea98d606546048f32293b9ad129b, type: 2}
       propertyPath: m_LocalPosition.x
-      value: -6.580928
+      value: -5.3127594
       objectReference: {fileID: 0}
     - target: {fileID: 4800585654612482, guid: 447aea98d606546048f32293b9ad129b, type: 2}
       propertyPath: m_LocalPosition.y
       value: 0.85814774
+      objectReference: {fileID: 0}
+    - target: {fileID: 4800585654612482, guid: 447aea98d606546048f32293b9ad129b, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: -9.963706
+      objectReference: {fileID: 0}
+    - target: {fileID: 4840228788789388, guid: 447aea98d606546048f32293b9ad129b, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4203040525370576, guid: 447aea98d606546048f32293b9ad129b, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: -10.000022
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 447aea98d606546048f32293b9ad129b, type: 2}
