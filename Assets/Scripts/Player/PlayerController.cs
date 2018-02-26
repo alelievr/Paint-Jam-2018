@@ -40,6 +40,8 @@ public class PlayerController : MonoBehaviour
 	public float		groundRaycast = .1f;
 	public float		middleRaycast = .2f;
 	public float		headRaycast = .4f;
+	
+	CanvasController	canvasController;
 
 	bool			paused
 	{
@@ -52,7 +54,8 @@ public class PlayerController : MonoBehaviour
 	bool			canJump = true;
 
 	new Rigidbody2D	rigidbody;
-	new Collider2D	collider;
+	new Collider2D collider;
+	new SpriteRenderer renderer;
 
 	RaycastHit2D[]	results = new RaycastHit2D[4];
 	Collider2D[]	overlapResults = new Collider2D[10];
@@ -62,6 +65,8 @@ public class PlayerController : MonoBehaviour
 	{
 		rigidbody = GetComponent< Rigidbody2D >();
 		collider = GetComponent< CircleCollider2D >();
+		renderer = GetComponentInChildren< SpriteRenderer >();
+		canvasController = FindObjectOfType< CanvasController >();
 
 		contactFilter.useTriggers = false;
 	}
@@ -72,8 +77,10 @@ public class PlayerController : MonoBehaviour
 			Die();
 		
 		if (dead && Input.GetKeyDown(KeyCode.Space))
+		{
 			GameManager.instance.Restart();
-
+			canvasController.DisplaySpaceToStart();
+		}
 	}
 
 	void FixedUpdate()
@@ -83,6 +90,7 @@ public class PlayerController : MonoBehaviour
 		if (WillJump() && IsGrounded())
 			Jump();
 
+		renderer.flipY = !direction;
 		// DetectCollisions();
 	}
 
@@ -188,7 +196,7 @@ public class PlayerController : MonoBehaviour
 	void Die()
 	{
 		dead = true;
-		Debug.Log("DEAD !");
+		canvasController.DisplayBlueScreen();
 	}
 
 	void Move()
