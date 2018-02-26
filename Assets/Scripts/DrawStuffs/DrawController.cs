@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using Cinemachine;
 
 /// <inheritdoc />
 /// <summary>
@@ -22,13 +23,16 @@ public class DrawController : MonoBehaviour
 
     private DrawShape CurrentShapeToDraw { get; set; }
     private bool IsDrawingShape { get; set; }
-    
+    CinemachineBrain brain = null;    
     private void Awake()
     {
         _drawModeToPrefab = new Dictionary<DrawMode, DrawShape> {
             {DrawMode.Rectangle, RectanglePrefab},
             {DrawMode.Circle, CirclePrefab}
         };
+        if (pasbouger == null)
+            pasbouger = new GameObject();
+        brain = FindObjectOfType<CinemachineBrain>();
     }
 
     private void Update()
@@ -55,11 +59,29 @@ public class DrawController : MonoBehaviour
     /// Adds a new vertex to the current shape at the given position, 
     /// or creates a new shape if it doesn't exist
     /// </summary>
+
+    GameObject last;
+    GameObject tmpcamera = null;
+    GameObject pasbouger = null;
     private void AddShapeVertex(Vector2 position)
     {
         if (CurrentShapeToDraw == null) {
             // No current shape -> instantiate a new shape and add two vertices:
             // one for the initial position, and the other for the current cursor
+            if (brain)
+            {
+                // tmpcamera = new GameObject("VirtualCamera").AddComponent<CinemachineVirtualCamera>();
+
+                last = brain.ActiveVirtualCamera.VirtualCameraGameObject;
+                if (tmpcamera == null)
+                    tmpcamera = GameObject.Instantiate(last);
+                pasbouger.transform.position = last.GetComponent<CinemachineVirtualCamera>().Follow.position;
+                tmpcamera.GetComponent<CinemachineVirtualCamera>().Follow = pasbouger.transform;
+                tmpcamera.SetActive(true);
+                last.SetActive(false);
+;                // last = brain.ActiveVirtualCamera.Follow;
+                // brain.ActiveVirtualCamera.Follow = null;
+            }
             var prefab = _drawModeToPrefab[Mode];
             CurrentShapeToDraw = Instantiate(prefab);
             CurrentShapeToDraw.name = "Shape " + _allShapes.Count;
@@ -73,6 +95,12 @@ public class DrawController : MonoBehaviour
 
             _allShapes.Add(CurrentShapeToDraw);
         } else {
+            if (brain)
+            {
+                last.SetActive(true);
+                tmpcamera.SetActive(false);
+                
+            }
             // Current shape exists -> add vertex if finished, 
             // otherwise start physics simulation and reset reference
             IsDrawingShape = !CurrentShapeToDraw.ShapeFinished;
