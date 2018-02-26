@@ -37,6 +37,8 @@ public class DrawController : MonoBehaviour
 
     private void Update()
     {
+        if (brain)
+            Debug.Log(brain.ActiveVirtualCamera.Name);
         var mousePos = (Vector2) Camera.main.ScreenToWorldPoint(Input.mousePosition);
 
         var clickDown = Input.GetKeyDown(KeyCode.Mouse0) && CurrentShapeToDraw == null &&
@@ -74,11 +76,18 @@ public class DrawController : MonoBehaviour
 
                 last = brain.ActiveVirtualCamera.VirtualCameraGameObject;
                 if (tmpcamera == null)
+                {
                     tmpcamera = GameObject.Instantiate(last);
-                pasbouger.transform.position = last.GetComponent<CinemachineVirtualCamera>().Follow.position;
+                    GameObject.Destroy(tmpcamera.GetComponent<CinemachineConfiner>());
+                    tmpcamera.GetComponent<CinemachineVirtualCamera>().GetCinemachineComponent<CinemachineFramingTransposer>().m_ScreenX = 0.5f;
+                    tmpcamera.GetComponent<CinemachineVirtualCamera>().GetCinemachineComponent<CinemachineFramingTransposer>().m_ScreenY = 0.5f;
+                    tmpcamera.name = "tmpcamera";
+                }
+                pasbouger.transform.position = last.GetComponent<CinemachineVirtualCamera>().transform.position;
+                //                 pasbouger.transform.position = last.GetComponent<CinemachineVirtualCamera>().GetCinemachineComponent<CinemachineFramingTransposer>().m_AdjustmentMode =;
                 tmpcamera.GetComponent<CinemachineVirtualCamera>().Follow = pasbouger.transform;
-                tmpcamera.SetActive(true);
                 last.SetActive(false);
+                tmpcamera.SetActive(true);                
 ;                // last = brain.ActiveVirtualCamera.Follow;
                 // brain.ActiveVirtualCamera.Follow = null;
             }
