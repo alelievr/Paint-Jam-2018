@@ -13,9 +13,6 @@ public class GameManager : MonoBehaviour
 		End
 	}
 
-	public AnalyticsEventTracker failedLevelEvent;
-	public AnalyticsEventTracker completeLevelEvent;
-
 	public static GameManager	instance;
 	public GameObject			menuPause;
 
@@ -29,6 +26,10 @@ public class GameManager : MonoBehaviour
 
 	void Start ()
 	{
+		Analytics.CustomEvent("level_start", new Dictionary< string, object >()
+		{
+			{"name", SceneManager.GetActiveScene().name}
+		});
 		gameState = GameState.Pause;
 		menuPause.SetActive(false);
 	}
@@ -45,8 +46,11 @@ public class GameManager : MonoBehaviour
 	}
 
 	public void Restart() {
+		Analytics.CustomEvent("level_fail", new Dictionary< string, object >()
+		{
+			{"name", SceneManager.GetActiveScene().name}
+		});
 		SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
-		failedLevelEvent.TriggerEvent();
 	}
 
 	public void Pause () {
@@ -61,7 +65,10 @@ public class GameManager : MonoBehaviour
 	}
 
 	public void Win () {
-		completeLevelEvent.TriggerEvent();
+		Analytics.CustomEvent("level_complete", new Dictionary< string, object >()
+		{
+			{"name", SceneManager.GetActiveScene().name}
+		});
 		gameState = GameState.End;
 		Debug.Log("Level" + (level + 1).ToString());
 		StartCoroutine(LoadNext());

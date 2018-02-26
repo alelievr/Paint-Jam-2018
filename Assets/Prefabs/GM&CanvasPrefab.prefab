@@ -208,9 +208,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4178015322611020}
   - component: {fileID: 114748085640541656}
-  - component: {fileID: 114786332133509604}
-  - component: {fileID: 114188803520561810}
-  - component: {fileID: 114382574533285338}
+  - component: {fileID: 82749689018788216}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -814,6 +812,86 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!82 &82749689018788216
+AudioSource:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1282151297715890}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: d58d05a4b4ee449af94a15cbea0b7e60, type: 3}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 1
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    - serializedVersion: 2
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
 --- !u!114 &114009256104181642
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1133,80 +1211,6 @@ MonoBehaviour:
   m_FillAmount: 1
   m_FillClockwise: 1
   m_FillOrigin: 0
---- !u!114 &114188803520561810
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1282151297715890}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: -745406591, guid: 220224b43fc464c28bc0e8de8f54a432, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Trigger:
-    m_IsTriggerExpanded: 0
-    m_Type: 1
-    m_LifecycleEvent: 0
-    m_ApplyRules: 0
-    m_Rules:
-      m_Rules: []
-    m_TriggerBool: 0
-    m_InitTime: 5
-    m_RepeatTime: 5
-    m_Repetitions: 0
-    repetitionCount: 0
-  m_EventPayload:
-    m_IsEventExpanded: 0
-    m_StandardEventType: LevelFail
-    m_Parameters:
-      m_Parameters:
-      - m_RequirementType: 1
-        m_GroupID: level
-        m_Tooltip: The level name. Either level_name or level_index is required.
-        m_Name: level_name
-        m_Value:
-          m_EditingCustomValue: 0
-          m_PopupIndex: 0
-          m_CustomValue: 
-          m_FixedType: 1
-          m_EnumType: 
-          m_EnumTypeIsCustomizable: 0
-          m_CanDisable: 1
-          m_PropertyType: 1
-          m_ValueType: System.String
-          m_Value: level
-          m_Target:
-            m_Target: {fileID: 0}
-            m_Path: 
-            m_ValidTypeNames:
-            - System.String
-            m_Type: System.String
-            m_EnumType: 
-      - m_RequirementType: 1
-        m_GroupID: level
-        m_Tooltip: The order of this level within the game. Either level_name or level_index
-          is required.
-        m_Name: level_index
-        m_Value:
-          m_EditingCustomValue: 0
-          m_PopupIndex: 0
-          m_CustomValue: 
-          m_FixedType: 1
-          m_EnumType: 
-          m_EnumTypeIsCustomizable: 0
-          m_CanDisable: 1
-          m_PropertyType: 2
-          m_ValueType: System.Int32
-          m_Value: 
-          m_Target:
-            m_Target: {fileID: 114748085640541656}
-            m_Path: level
-            m_ValidTypeNames:
-            - System.Int32
-            m_Type: System.Int32
-            m_EnumType: 
-    m_Name: level_fail
 --- !u!114 &114207333904105686
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1630,80 +1634,6 @@ MonoBehaviour:
   m_FillAmount: 1
   m_FillClockwise: 1
   m_FillOrigin: 0
---- !u!114 &114382574533285338
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1282151297715890}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: -745406591, guid: 220224b43fc464c28bc0e8de8f54a432, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Trigger:
-    m_IsTriggerExpanded: 1
-    m_Type: 1
-    m_LifecycleEvent: 0
-    m_ApplyRules: 0
-    m_Rules:
-      m_Rules: []
-    m_TriggerBool: 0
-    m_InitTime: 5
-    m_RepeatTime: 5
-    m_Repetitions: 0
-    repetitionCount: 0
-  m_EventPayload:
-    m_IsEventExpanded: 1
-    m_StandardEventType: LevelComplete
-    m_Parameters:
-      m_Parameters:
-      - m_RequirementType: 1
-        m_GroupID: level
-        m_Tooltip: The level name. Either level_name or level_index is required.
-        m_Name: level_name
-        m_Value:
-          m_EditingCustomValue: 0
-          m_PopupIndex: 0
-          m_CustomValue: 
-          m_FixedType: 1
-          m_EnumType: 
-          m_EnumTypeIsCustomizable: 0
-          m_CanDisable: 1
-          m_PropertyType: 1
-          m_ValueType: System.String
-          m_Value: level
-          m_Target:
-            m_Target: {fileID: 0}
-            m_Path: 
-            m_ValidTypeNames:
-            - System.String
-            m_Type: System.String
-            m_EnumType: 
-      - m_RequirementType: 1
-        m_GroupID: level
-        m_Tooltip: The order of this level within the game. Either level_name or level_index
-          is required.
-        m_Name: level_index
-        m_Value:
-          m_EditingCustomValue: 0
-          m_PopupIndex: 0
-          m_CustomValue: 
-          m_FixedType: 1
-          m_EnumType: 
-          m_EnumTypeIsCustomizable: 0
-          m_CanDisable: 1
-          m_PropertyType: 2
-          m_ValueType: System.Int32
-          m_Value: 
-          m_Target:
-            m_Target: {fileID: 114748085640541656}
-            m_Path: level
-            m_ValidTypeNames:
-            - System.Int32
-            m_Type: System.Int32
-            m_EnumType: 
-    m_Name: level_complete
 --- !u!114 &114393333986215768
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1976,9 +1906,9 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'All we''re looking for
+  m_Text: 'So you know when the good thingshappend
 
-    is just basic shapes'
+'
 --- !u!114 &114521024571352658
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2226,10 +2156,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 37be9a094ad28455eaf5957672df8c3e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  failedLevelEvent: {fileID: 114188803520561810}
-  completeLevelEvent: {fileID: 114382574533285338}
   menuPause: {fileID: 1559510232401766}
-  level: 6
+  level: 4
   gameState: 0
 --- !u!114 &114763317976837152
 MonoBehaviour:
@@ -2447,80 +2375,6 @@ MonoBehaviour:
         m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
---- !u!114 &114786332133509604
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1282151297715890}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: -745406591, guid: 220224b43fc464c28bc0e8de8f54a432, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Trigger:
-    m_IsTriggerExpanded: 0
-    m_Type: 0
-    m_LifecycleEvent: 2
-    m_ApplyRules: 0
-    m_Rules:
-      m_Rules: []
-    m_TriggerBool: 0
-    m_InitTime: 5
-    m_RepeatTime: 5
-    m_Repetitions: 0
-    repetitionCount: 0
-  m_EventPayload:
-    m_IsEventExpanded: 0
-    m_StandardEventType: LevelStart
-    m_Parameters:
-      m_Parameters:
-      - m_RequirementType: 1
-        m_GroupID: level
-        m_Tooltip: The level name. Either level_name or level_index is required.
-        m_Name: level_name
-        m_Value:
-          m_EditingCustomValue: 0
-          m_PopupIndex: 0
-          m_CustomValue: 
-          m_FixedType: 1
-          m_EnumType: 
-          m_EnumTypeIsCustomizable: 0
-          m_CanDisable: 1
-          m_PropertyType: 1
-          m_ValueType: System.String
-          m_Value: level
-          m_Target:
-            m_Target: {fileID: 0}
-            m_Path: 
-            m_ValidTypeNames:
-            - System.String
-            m_Type: System.String
-            m_EnumType: 
-      - m_RequirementType: 1
-        m_GroupID: level
-        m_Tooltip: The order of this level within the game. Either level_name or level_index
-          is required.
-        m_Name: level_index
-        m_Value:
-          m_EditingCustomValue: 0
-          m_PopupIndex: 0
-          m_CustomValue: 
-          m_FixedType: 1
-          m_EnumType: 
-          m_EnumTypeIsCustomizable: 0
-          m_CanDisable: 1
-          m_PropertyType: 2
-          m_ValueType: System.Int32
-          m_Value: 
-          m_Target:
-            m_Target: {fileID: 114748085640541656}
-            m_Path: level
-            m_ValidTypeNames:
-            - System.Int32
-            m_Type: System.Int32
-            m_EnumType: 
-    m_Name: level_start
 --- !u!114 &114798562800847288
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -3271,16 +3125,16 @@ RectTransform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1497131769673916}
-  m_LocalRotation: {x: -0, y: -0, z: 0.10965034, w: 0.9939702}
+  m_LocalRotation: {x: -0, y: -0, z: -0.17933874, w: 0.9837874}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.01, y: 0.01, z: 0.2}
   m_Children: []
   m_Father: {fileID: 224535592854821572}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 12.59}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -20.662}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0.46, y: 1.48}
+  m_AnchoredPosition: {x: 0.34, y: 8.24}
   m_SizeDelta: {x: 497.3656, y: 117.5515}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!224 &224062058024124808
