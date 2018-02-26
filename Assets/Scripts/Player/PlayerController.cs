@@ -90,7 +90,7 @@ public class PlayerController : MonoBehaviour
 		if (WillJump() && IsGrounded())
 			Jump();
 
-		renderer.flipY = !direction;
+		renderer.flipX = !direction;
 		// DetectCollisions();
 	}
 
