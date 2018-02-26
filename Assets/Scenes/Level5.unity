@@ -243,6 +243,43 @@ Prefab:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 223612788367385122, guid: f5c38c9d6c57541938e2535bd8ebf5b8,
+        type: 2}
+      propertyPath: m_Camera
+      value: 
+      objectReference: {fileID: 203955999}
+    - target: {fileID: 224049707995086974, guid: f5c38c9d6c57541938e2535bd8ebf5b8,
+        type: 2}
+      propertyPath: m_AnchoredPosition.x
+      value: 0.79866505
+      objectReference: {fileID: 0}
+    - target: {fileID: 224049707995086974, guid: f5c38c9d6c57541938e2535bd8ebf5b8,
+        type: 2}
+      propertyPath: m_AnchoredPosition.y
+      value: -0.6384381
+      objectReference: {fileID: 0}
+    - target: {fileID: 224049707995086974, guid: f5c38c9d6c57541938e2535bd8ebf5b8,
+        type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0.014853808
+      objectReference: {fileID: 0}
+    - target: {fileID: 224049707995086974, guid: f5c38c9d6c57541938e2535bd8ebf5b8,
+        type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 0.9998897
+      objectReference: {fileID: 0}
+    - target: {fileID: 224049707995086974, guid: f5c38c9d6c57541938e2535bd8ebf5b8,
+        type: 2}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 1.702
+      objectReference: {fileID: 0}
+    - target: {fileID: 114508938908491490, guid: f5c38c9d6c57541938e2535bd8ebf5b8,
+        type: 2}
+      propertyPath: m_Text
+      value: 'We don''t make mistakes,
+
+        only happy accident'
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: f5c38c9d6c57541938e2535bd8ebf5b8, type: 2}
   m_IsPrefabParent: 0
@@ -483,7 +520,7 @@ ParticleSystem:
   moveWithTransform: 0
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 1
-  randomSeed: 930148375
+  randomSeed: -210896173
   InitialModule:
     serializedVersion: 3
     enabled: 1
@@ -4119,7 +4156,7 @@ Prefab:
       objectReference: {fileID: 2050531795}
     - target: {fileID: 4800585654612482, guid: 447aea98d606546048f32293b9ad129b, type: 2}
       propertyPath: m_LocalPosition.x
-      value: -0.8920148
+      value: -1.5013931
       objectReference: {fileID: 0}
     - target: {fileID: 4800585654612482, guid: 447aea98d606546048f32293b9ad129b, type: 2}
       propertyPath: m_LocalPosition.y
