@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.Analytics;
 
 public class GameManager : MonoBehaviour
 {
@@ -11,6 +12,9 @@ public class GameManager : MonoBehaviour
 		Pause,
 		End
 	}
+
+	public AnalyticsEventTracker failedLevelEvent;
+	public AnalyticsEventTracker completeLevelEvent;
 
 	public static GameManager	instance;
 	public GameObject			menuPause;
@@ -42,6 +46,7 @@ public class GameManager : MonoBehaviour
 
 	public void Restart() {
 		SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+		failedLevelEvent.TriggerEvent();
 	}
 
 	public void Pause () {
@@ -56,13 +61,14 @@ public class GameManager : MonoBehaviour
 	}
 
 	public void Win () {
+		completeLevelEvent.TriggerEvent();
 		gameState = GameState.End;
 		Debug.Log("Level" + (level + 1).ToString());
 		StartCoroutine(LoadNext());
 	}
 
 	public void LoadLevel (string lvl) {
-		SceneManager.LoadScene("Level" + lvl);
+		SceneManager.LoadScene("Level" + (int.Parse(lvl) + 1));
 	}
 	
 	IEnumerator LoadNext () {
