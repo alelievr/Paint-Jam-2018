@@ -150,6 +150,12 @@ public class DrawRectangle : DrawShape
         // Find all the triangles in the shape
         var triangles = new Triangulator(rectangleVertices).Triangulate();
 
+        Vector2[] uvs = new Vector2[4];
+        uvs[1] = Vector2.zero;
+        uvs[2] = Vector2.right;
+        uvs[3] = Vector2.one;
+        uvs[0] = Vector2.up;
+
         // Assign each vertex the fill color
         var colors = Enumerable.Repeat(fillColor, rectangleVertices.Length).ToArray();
 
@@ -157,7 +163,8 @@ public class DrawRectangle : DrawShape
             name = "Rectangle",
             vertices = rectangleVertices.ToVector3(),
             triangles = triangles,
-            colors = colors
+            colors = colors,
+            uv = uvs
         };
 
         mesh.RecalculateNormals();

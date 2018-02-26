@@ -141,10 +141,13 @@ public class DrawCircle : DrawShape
         const float segmentMultiplier = 5f;
         var numSegments = (int) (radius * segmentMultiplier + segmentOffset);
 
+        List< Vector2 > uvs = new List< Vector2 >();
+
         // Create an array of points arround a cricle
         var circleVertices = Enumerable.Range(0, numSegments)
             .Select(i => {
                 var theta = 2 * Mathf.PI * i / numSegments;
+                uvs.Add(new Vector2(Mathf.Cos(theta) * .5f + .5f, Mathf.Sin(theta) * .5f + .5f));
                 return new Vector2(Mathf.Cos(theta), Mathf.Sin(theta)) * radius;
             })
             .ToArray();
@@ -159,7 +162,8 @@ public class DrawCircle : DrawShape
             name = "Circle",
             vertices = circleVertices.ToVector3(),
             triangles = triangles,
-            colors = colors
+            colors = colors,
+            uv = uvs.ToArray()
         };
 
         mesh.RecalculateNormals();
