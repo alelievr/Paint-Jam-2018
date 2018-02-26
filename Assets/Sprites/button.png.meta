@@ -1,10 +1,9 @@
 fileFormatVersion: 2
-guid: b674e9338602342f291a1a645576d262
-timeCreated: 1519568884
+guid: d657854185134425bbf869cc4c757b1b
+timeCreated: 1519593770
 licenseType: Free
 TextureImporter:
-  fileIDToRecycleName:
-    21300000: feuille (1)_0
+  fileIDToRecycleName: {}
   externalObjects: {}
   serializedVersion: 4
   mipmaps:
@@ -32,7 +31,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: -1
+    filterMode: 0
     aniso: -1
     mipBias: -1
     wrapU: 1
@@ -41,13 +40,13 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 2
+  spriteMode: 1
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 20
   alphaUsage: 1
   alphaIsTransparency: 1
   spriteTessellationDetail: -1
@@ -79,48 +78,7 @@ TextureImporter:
     androidETC2FallbackOverride: 0
   spriteSheet:
     serializedVersion: 2
-    sprites:
-    - serializedVersion: 2
-      name: feuille (1)_0
-      rect:
-        serializedVersion: 2
-        x: 122
-        y: 60
-        width: 361
-        height: 419
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: 105.808685, y: 54.06958}
-        - {x: 103.5596, y: 77.84894}
-        - {x: 42.52841, y: 33.94403}
-        - {x: 44.39789, y: 169.38937}
-        - {x: 20.13797, y: 154.7066}
-        - {x: -7.779907, y: 209.5}
-        - {x: -32.41516, y: 152.92441}
-        - {x: -61.785736, y: 164.76254}
-        - {x: -44.76297, y: 31.238007}
-        - {x: -87.67015, y: 73.04898}
-        - {x: -92.80675, y: 45.96341}
-        - {x: -179.48819, y: 75.43695}
-        - {x: -147.30893, y: -16.729752}
-        - {x: -179.45679, y: -27.259705}
-        - {x: -72.23775, y: -115.9088}
-        - {x: -79.590225, y: -142.35898}
-        - {x: -1.0993652, y: -111.52182}
-        - {x: 4.959198, y: -111.4841}
-        - {x: 0.7720642, y: -208.38297}
-        - {x: 23.671509, y: -208.4882}
-        - {x: 8.239105, y: -111.239716}
-        - {x: 21.91336, y: -111.22545}
-        - {x: 111.589935, y: -125.263626}
-        - {x: 86.68094, y: -106.41823}
-        - {x: 177.71603, y: -7.0708923}
-        - {x: 152.60373, y: 8.883209}
-        - {x: 173.41742, y: 70.88385}
-      physicsShape: []
-      tessellationDetail: 0
+    sprites: []
     outline: []
     physicsShape: []
   spritePackingTag: 
