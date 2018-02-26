@@ -550,6 +550,12 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 0
+--- !u!114 &334466931 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 114748085640541656, guid: f5c38c9d6c57541938e2535bd8ebf5b8,
+    type: 2}
+  m_PrefabInternal: {fileID: 334466928}
+  m_Script: {fileID: 11500000, guid: 37be9a094ad28455eaf5957672df8c3e, type: 3}
 --- !u!1 &617257444
 GameObject:
   m_ObjectHideFlags: 0
@@ -1055,7 +1061,7 @@ Prefab:
         type: 2}
       propertyPath: GM
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 334466931}
     - target: {fileID: 1075001458517186, guid: 87d189a0d8f944438a7e73e5d834f5cd, type: 2}
       propertyPath: m_Name
       value: EndFlag
@@ -1219,7 +1225,7 @@ Prefab:
       objectReference: {fileID: 2050531795}
     - target: {fileID: 4800585654612482, guid: 447aea98d606546048f32293b9ad129b, type: 2}
       propertyPath: m_LocalPosition.x
-      value: -4.3156924
+      value: -5.2423186
       objectReference: {fileID: 0}
     - target: {fileID: 4800585654612482, guid: 447aea98d606546048f32293b9ad129b, type: 2}
       propertyPath: m_LocalPosition.y
