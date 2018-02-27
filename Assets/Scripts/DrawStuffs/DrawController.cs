@@ -56,9 +56,9 @@ public class DrawController : MonoBehaviour
 
         if (GameManager.instance.gameState == GameManager.GameState.Pause)
             return ;
-
-        //if (!IsDrawingShape)
-        //lastPlayerTransform.position = playerTransform.position;
+		
+		if (!IsDrawingShape)
+			lastPlayerTransform.position = playerTransform.position;
 
         if (clickDown || clickUp) {
             AddShapeVertex(mousePos);
@@ -76,7 +76,6 @@ public class DrawController : MonoBehaviour
         if (CurrentShapeToDraw == null) {
             // No current shape -> instantiate a new shape and add two vertices:
             // one for the initial position, and the other for the current cursor
-            lastPlayerTransform.position = playerTransform.position;
             var prefab = _drawModeToPrefab[Mode];
             CurrentShapeToDraw = Instantiate(prefab);
             CurrentShapeToDraw.name = "Shape " + _allShapes.Count;
