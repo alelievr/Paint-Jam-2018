@@ -23,22 +23,29 @@ public class DrawController : MonoBehaviour
 
     private DrawShape CurrentShapeToDraw { get; set; }
     private bool IsDrawingShape { get; set; }
-    CinemachineBrain brain = null;    
+
+	CinemachineVirtualCamera	vcam;
+	CinemachineVirtualCamera	playerVcam;
+	Transform					playerTransform;
+	Transform					lastPlayerTransform;
+    
     private void Awake()
     {
         _drawModeToPrefab = new Dictionary<DrawMode, DrawShape> {
             {DrawMode.Rectangle, RectanglePrefab},
             {DrawMode.Circle, CirclePrefab}
         };
-        if (pasbouger == null)
-            pasbouger = new GameObject();
-        brain = FindObjectOfType<CinemachineBrain>();
+		vcam = GameObject.Find("PlayerCameraDrawing").GetComponent< CinemachineVirtualCamera >();
+		playerVcam = GameObject.Find("PlayerCamera").GetComponent< CinemachineVirtualCamera >();
+		vcam.m_Lens.OrthographicSize = playerVcam.m_Lens.OrthographicSize;
+		playerTransform = GameObject.Find("Player").transform;
+		lastPlayerTransform = new GameObject("PlayerTransform").transform;
+		vcam.Follow = lastPlayerTransform;
+		vcam.gameObject.SetActive(false);
     }
 
     private void Update()
     {
-        if (brain)
-            Debug.Log(brain.ActiveVirtualCamera.Name);
         var mousePos = (Vector2) Camera.main.ScreenToWorldPoint(Input.mousePosition);
 
         var clickDown = Input.GetKeyDown(KeyCode.Mouse0) && CurrentShapeToDraw == null &&
@@ -61,36 +68,11 @@ public class DrawController : MonoBehaviour
     /// Adds a new vertex to the current shape at the given position, 
     /// or creates a new shape if it doesn't exist
     /// </summary>
-
-    GameObject last;
-    GameObject tmpcamera = null;
-    GameObject pasbouger = null;
     private void AddShapeVertex(Vector2 position)
     {
         if (CurrentShapeToDraw == null) {
             // No current shape -> instantiate a new shape and add two vertices:
             // one for the initial position, and the other for the current cursor
-            if (brain)
-            {
-                // tmpcamera = new GameObject("VirtualCamera").AddComponent<CinemachineVirtualCamera>();
-
-                last = brain.ActiveVirtualCamera.VirtualCameraGameObject;
-                if (tmpcamera == null)
-                {
-                    tmpcamera = GameObject.Instantiate(last);
-                    GameObject.Destroy(tmpcamera.GetComponent<CinemachineConfiner>());
-                    tmpcamera.GetComponent<CinemachineVirtualCamera>().GetCinemachineComponent<CinemachineFramingTransposer>().m_ScreenX = 0.5f;
-                    tmpcamera.GetComponent<CinemachineVirtualCamera>().GetCinemachineComponent<CinemachineFramingTransposer>().m_ScreenY = 0.5f;
-                    tmpcamera.name = "tmpcamera";
-                }
-                pasbouger.transform.position = last.GetComponent<CinemachineVirtualCamera>().transform.position;
-                //                 pasbouger.transform.position = last.GetComponent<CinemachineVirtualCamera>().GetCinemachineComponent<CinemachineFramingTransposer>().m_AdjustmentMode =;
-                tmpcamera.GetComponent<CinemachineVirtualCamera>().Follow = pasbouger.transform;
-                last.SetActive(false);
-                tmpcamera.SetActive(true);                
-;                // last = brain.ActiveVirtualCamera.Follow;
-                // brain.ActiveVirtualCamera.Follow = null;
-            }
             var prefab = _drawModeToPrefab[Mode];
             CurrentShapeToDraw = Instantiate(prefab);
             CurrentShapeToDraw.name = "Shape " + _allShapes.Count;
@@ -103,13 +85,10 @@ public class DrawController : MonoBehaviour
             IsDrawingShape = true;
 
             _allShapes.Add(CurrentShapeToDraw);
+			lastPlayerTransform.position = playerTransform.position;
+			vcam.gameObject.SetActive(true);
+			playerVcam.gameObject.SetActive(false);
         } else {
-            if (brain)
-            {
-                last.SetActive(true);
-                tmpcamera.SetActive(false);
-                
-            }
             // Current shape exists -> add vertex if finished, 
             // otherwise start physics simulation and reset reference
             IsDrawingShape = !CurrentShapeToDraw.ShapeFinished;
@@ -120,6 +99,8 @@ public class DrawController : MonoBehaviour
                 CurrentShapeToDraw.Validate();
                 CurrentShapeToDraw.SimulatingPhysics = true;
                 CurrentShapeToDraw = null;
+				vcam.gameObject.SetActive(false);
+				playerVcam.gameObject.SetActive(true);
             }
         }
     }

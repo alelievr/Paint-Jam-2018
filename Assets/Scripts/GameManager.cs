@@ -4,6 +4,9 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.Analytics;
 
+using Cinemachine.Utility;
+using Cinemachine;
+
 public class GameManager : MonoBehaviour
 {
 	public	enum		GameState

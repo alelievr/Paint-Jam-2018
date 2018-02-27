@@ -17,3 +17,13 @@ MonoBehaviour:
     m_Blend:
       m_Style: 1
       m_Time: 1
+  - m_From: PlayerCameraDrawing
+    m_To: PlayerCamera
+    m_Blend:
+      m_Style: 1
+      m_Time: 1
+  - m_From: PlayerCamera
+    m_To: PlayerCameraDrawing
+    m_Blend:
+      m_Style: 6
+      m_Time: 0.4
