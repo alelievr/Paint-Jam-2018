@@ -28,6 +28,7 @@ public class DrawController : MonoBehaviour
 	CinemachineVirtualCamera	playerVcam;
 	Transform					playerTransform;
 	Transform					lastPlayerTransform;
+    CinemachineBrain brain;
     
     private void Awake()
     {
@@ -37,7 +38,8 @@ public class DrawController : MonoBehaviour
         };
 		vcam = GameObject.Find("PlayerCameraDrawing").GetComponent< CinemachineVirtualCamera >();
 		playerVcam = GameObject.Find("PlayerCamera").GetComponent< CinemachineVirtualCamera >();
-		vcam.m_Lens.OrthographicSize = playerVcam.m_Lens.OrthographicSize;
+        brain = GameObject.FindObjectOfType<CinemachineBrain>();
+        vcam.m_Lens.OrthographicSize = playerVcam.m_Lens.OrthographicSize;
 		playerTransform = GameObject.Find("Player").transform;
 		lastPlayerTransform = new GameObject("PlayerTransform").transform;
 		vcam.Follow = lastPlayerTransform;
@@ -56,9 +58,9 @@ public class DrawController : MonoBehaviour
 
         if (GameManager.instance.gameState == GameManager.GameState.Pause)
             return ;
-		
-		if (!IsDrawingShape)
-			lastPlayerTransform.position = playerTransform.position;
+
+        if (!IsDrawingShape && !brain.IsBlending)
+            lastPlayerTransform.position = playerVcam.transform.position;
 
         if (clickDown || clickUp) {
             AddShapeVertex(mousePos);
@@ -74,6 +76,7 @@ public class DrawController : MonoBehaviour
     private void AddShapeVertex(Vector2 position)
     {
         if (CurrentShapeToDraw == null) {
+            lastPlayerTransform.position = playerVcam.transform.position;
             // No current shape -> instantiate a new shape and add two vertices:
             // one for the initial position, and the other for the current cursor
             var prefab = _drawModeToPrefab[Mode];
