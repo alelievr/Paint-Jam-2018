@@ -56,6 +56,9 @@ public class DrawController : MonoBehaviour
 
         if (GameManager.instance.gameState == GameManager.GameState.Pause)
             return ;
+		
+		if (!IsDrawingShape)
+			lastPlayerTransform.position = playerTransform.position;
 
         if (clickDown || clickUp) {
             AddShapeVertex(mousePos);
@@ -85,7 +88,6 @@ public class DrawController : MonoBehaviour
             IsDrawingShape = true;
 
             _allShapes.Add(CurrentShapeToDraw);
-			lastPlayerTransform.position = playerTransform.position;
 			vcam.gameObject.SetActive(true);
 			playerVcam.gameObject.SetActive(false);
         } else {

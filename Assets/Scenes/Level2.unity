@@ -5559,6 +5559,19 @@ Prefab:
       propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 114455844986371556, guid: 447aea98d606546048f32293b9ad129b,
+        type: 2}
+      propertyPath: m_Follow
+      value: 
+      objectReference: {fileID: 2050531795}
+    - target: {fileID: 4247690482771006, guid: 447aea98d606546048f32293b9ad129b, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: -4.748653
+      objectReference: {fileID: 0}
+    - target: {fileID: 4247690482771006, guid: 447aea98d606546048f32293b9ad129b, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 0.8615227
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 447aea98d606546048f32293b9ad129b, type: 2}
   m_IsPrefabParent: 0

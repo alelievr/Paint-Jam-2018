@@ -3911,6 +3911,23 @@ Prefab:
       propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4800585654612482, guid: 447aea98d606546048f32293b9ad129b, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 0.35152268
+      objectReference: {fileID: 0}
+    - target: {fileID: 114455844986371556, guid: 447aea98d606546048f32293b9ad129b,
+        type: 2}
+      propertyPath: m_Follow
+      value: 
+      objectReference: {fileID: 2050531795}
+    - target: {fileID: 4247690482771006, guid: 447aea98d606546048f32293b9ad129b, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: -1.3686526
+      objectReference: {fileID: 0}
+    - target: {fileID: 4247690482771006, guid: 447aea98d606546048f32293b9ad129b, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 0.35152268
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 114152769935299918, guid: 447aea98d606546048f32293b9ad129b, type: 2}
     - {fileID: 114422581600102018, guid: 447aea98d606546048f32293b9ad129b, type: 2}
